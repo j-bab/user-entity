@@ -18,6 +18,7 @@ trait RequiredFieldsEntityTrait
         if (count($missingKeys) > 0) {
              throw new \InvalidArgumentException(get_class() . ' is missing parameters ' . implode($missingKeys,', '));
         }
+        return true;
     }
 
 

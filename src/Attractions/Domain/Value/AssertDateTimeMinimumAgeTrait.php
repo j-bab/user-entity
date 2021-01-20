@@ -20,5 +20,6 @@ trait AssertDateTimeMinimumAgeTrait
         if (self::ageFromDateTime($date) < $minAge) {
             throw new \InvalidArgumentException(get_class() . ' minimum age of ' . $minAge . ' years');
         }
+        return true;
     }
 }

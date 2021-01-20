@@ -7,5 +7,6 @@ trait AssertStringLengthTrait {
         if (mb_strlen($string) > $maxLength) {
             throw new \InvalidArgumentException(get_class() . ' maximum length of ' . $maxLength . ' Characters');
         }
+       return true;
     }
 }

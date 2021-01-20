@@ -5,7 +5,8 @@ trait AssertValidEmailTrait {
 
    static  function assertValidEmail($email){
         if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            throw new \InvalidArgumentException(get_class() . ' must be a valid email address');
+            throw new \InvalidArgumentException(get_class() . ' must be a valid email address' . $email);
         }
+       return true;
     }
 }
