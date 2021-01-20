@@ -6,8 +6,9 @@ use Attractions\Domain\Value\DateOfBirth;
 use Attractions\Domain\Value\String32;
 use Attractions\Domain\Value\EmailAddress;
 
-class User
+class User extends AbstractEntity
 {
+
     /**
      * @var String32
      */
@@ -34,6 +35,13 @@ class User
      */
     private $passwordHash;
 
+    use RequiredFieldsEntityTrait;
+
+    public function __construct(array $data){
+        $requiredFields = $this->listAllProperties();
+        $this->assertFieldsSet($data, $requiredFields);
+        return parent::__construct($data);
+    }
 
     public function getFirstName(): string
     {
