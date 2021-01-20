@@ -21,12 +21,13 @@ abstract class AbstractStringValue implements StringValueInterface
         return $this->value;
     }
 
-   final public function set(string $string){
+   final public function set(string $string):AbstractStringValue
+   {
         $this->validate($string);
         $this->value = $string;
         return $this;
     }
 
-     abstract protected function validate(string $string);
+     abstract protected function validate(string $string):bool;
 
 }

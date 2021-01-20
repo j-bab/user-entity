@@ -37,7 +37,8 @@ class User extends AbstractEntity
 
     use RequiredFieldsEntityTrait;
 
-    public function __construct(array $data){
+    public function __construct(array $data)
+    {
         $requiredFields = $this->listAllProperties();
         $this->assertFieldsSet($data, $requiredFields);
         return parent::__construct($data);
@@ -48,7 +49,7 @@ class User extends AbstractEntity
         return $this->firstName->get();
     }
 
-    public function setFirstName($string): User
+    public function setFirstName(string $string): User
     {
         $this->firstName = new String32($string);
         return $this;
@@ -59,7 +60,7 @@ class User extends AbstractEntity
         return $this->firstName->get();
     }
 
-    public function setLastName($string): User
+    public function setLastName(string $string): User
     {
         $this->lastName = new String32($string);
         return $this;
@@ -70,7 +71,7 @@ class User extends AbstractEntity
         return $this->emailAddress->get();
     }
 
-    public function setEmailAddress($string): User
+    public function setEmailAddress(string $string): User
     {
         $this->emailAddress = new EmailAddress($string);
         return $this;
@@ -81,7 +82,7 @@ class User extends AbstractEntity
         return $this->passwordHash->get();
     }
 
-    public function setPasswordHash($string): User
+    public function setPasswordHash(string $string): User
     {
         $this->passwordHash = new String32($string);
         return $this;
@@ -92,7 +93,7 @@ class User extends AbstractEntity
         return $this->dateOfBirth->get();
     }
 
-    public function setDateOfBirth($string): User
+    public function setDateOfBirth(string $string): User
     {
         $this->dateOfBirth = new DateOfBirth($string);
         return $this;

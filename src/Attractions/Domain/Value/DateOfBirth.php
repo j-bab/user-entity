@@ -9,12 +9,13 @@ final class DateOfBirth extends AbstractDateTimeValue
 
     const MINIMUM_AGE = '13';
 
-    protected function validate(\DateTime $dateTime)
+    protected function validate(\DateTime $dateTime): bool
     {
         $this->assertMinimumAge($dateTime, self::MINIMUM_AGE);
+        return true;
     }
 
-    public function getAge()
+    public function getAge(): int
     {
         return $this->ageFromDateTime($this->value);
     }

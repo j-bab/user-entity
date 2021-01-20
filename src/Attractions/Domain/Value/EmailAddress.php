@@ -11,10 +11,11 @@ final class EmailAddress extends AbstractStringValue
 
     const MAX_LENGTH = 254;
 
-    protected function validate($string)
+    protected function validate(string $string): bool
     {
         $this->assertMaxLength($string, self::MAX_LENGTH);
         $this->assertValidEmail($string);
+        return true;
     }
 
 }

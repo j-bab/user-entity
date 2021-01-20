@@ -22,7 +22,7 @@ abstract class AbstractDateTimeValue implements StringValueInterface
         return $this->value->format($this::DATE_FORMAT);
     }
 
-    final public function set(string $string)
+    final public function set(string $string): AbstractDateTimeValue
     {
         $date = $this->toDateTime($string);
         $this->validate($date);
@@ -30,7 +30,7 @@ abstract class AbstractDateTimeValue implements StringValueInterface
         return $this;
     }
 
-    final private function toDateTime($string)
+    final private function toDateTime(string $string): \DateTime
     {
 
         $dateTime = \DateTime::createFromFormat($this::DATE_FORMAT, $string);
@@ -40,6 +40,6 @@ abstract class AbstractDateTimeValue implements StringValueInterface
         return $dateTime;
     }
 
-    abstract protected function validate(\DateTime $string);
+    abstract protected function validate(\DateTime $string): bool;
 
 }

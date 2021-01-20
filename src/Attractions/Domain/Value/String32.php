@@ -9,8 +9,10 @@ final class String32 extends AbstractStringValue
 
     const MAX_LENGTH = 32;
 
-    protected function validate($string){
+    protected function validate(string $string): bool
+    {
         $this->assertMaxLength($string, self::MAX_LENGTH);
+        return true;
     }
 
 }
