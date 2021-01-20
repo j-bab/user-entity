@@ -14,7 +14,7 @@ run
 to fetch the required packages
 
 run
-`phpunit tests`
+`.\vendor\bin\phpunit tests`
 to run the test suite
 
 ## Docker
